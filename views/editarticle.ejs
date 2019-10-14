@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="/stylesheets/style.css">
+  <meta charset="utf-8">
+  <title></title>
+</head>
+<body>
+	<form action="/articles/<%= article.id %>" method="POST">
+	    <input type="text" name="title" value="<%= article.title %>">
+	    <input type="text" name="description" value="<%= article.description %>">
+	    <input type="number" name="likes" value="<%= article.likes %>">
+	    <input type="taxt" name="author" value="<%= article.author %>">
+	    <input type="submit" value="Update">
+	</form>
+</form>
+</body>
+</html>

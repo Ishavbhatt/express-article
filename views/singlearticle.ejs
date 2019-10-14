@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	  <link rel="stylesheet" href="/stylesheets/style.css">
+	  <meta charset="utf-8">
+	  <title></title>
+	</head>
+		<body>
+			<a href="/articles">Home</a> 
+			<h2><%=article.title%></h2>
+			<h2><%=article.description%></h2>
+			<h4><%=article.likes%></h4>
+			<h3><%=article.author%></h3>
+			
+			<div>
+				<h1>Comments:</h1>
+				<% comments.forEach((comment) =>{ %>
+					<h2> <%= comment.content %></h2>
+					<a href="/comments/<%=comment.id%>/edit">Edit</a>
+					<a href="/comments/<%=comment.id%>/delete">Delete</a>
+				<% }) %>
+			</div>
+			<div>
+				<form action="/comments" method="POST">
+					<input type="text" name="content" placeholder="Add your comment">
+					<input type="hidden" name="articleId" value="<%= article.id%>">
+					<input type="submit" value="comment">
+				</form>
+			</div>
+		</body>
+</html>
