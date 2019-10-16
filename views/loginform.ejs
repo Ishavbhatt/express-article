@@ -1,12 +1,18 @@
 <!DOCTYPE html>
 <html>
+  <link rel="stylesheet" href="stylesheets/style.css"
   <head>
   </head>
   <body>
-    <form action="/users/login" method="POST">
-    	<input type="email" name="email" placeholder="Email">
-    	<input type="text" name="password" placeholder="Password">
-      <input type="submit" value="Login">
-    </form>
+    <div class="form">
+        <h1> Login Here: </h1>
+        <form action="/users/login" method="POST">
+          <label for="email">Email</label>
+          <input type="email" name="email" placeholder="Email">
+          <label for="password">Password</label>
+          <input type="text" name="password" placeholder="Password">
+          <input type="submit" value="Login">
+        </form>
+    </div>
   </body>
 </html>

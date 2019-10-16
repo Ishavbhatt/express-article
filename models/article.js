@@ -6,7 +6,7 @@ var articleSchema = new Schema({
 	title: String,
 	description: String,
 	likes: Number,
-	author: {
+	authorId: {
 		type: Schema.Types.ObjectId,
 		ref: 'User',
 		required: true

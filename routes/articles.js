@@ -21,7 +21,7 @@ router.get("/add", auth.checkUserLogin, (req, res) => {
 // Lists of Articles
 router.post("/", auth.checkUserLogin, (req, res)=>{
     console.log(req.body);
-    req.body.author = req.user.id;
+    req.body.authorId = req.user.id;
     Article.create(req.body, (err, articlelist)=>{
         console.log(err, articlelist);
         if(err) return res.json({err})
@@ -48,8 +48,9 @@ router.post("/:id", auth.checkUserLogin, (req, res)=>{
 
 // Shows article with all comments
 router.get('/:id', (req, res)=>{
-    Article.findById(req.params.id, (err, article)=>{
-        Comment.find({articleId: req.params.id}, (err, comments)=>{
+    Article.findById(req.params.id).populate('authorId', "name email").exec( (err, article)=>{
+        Comment.find({articleId: req.params.id}).populate('author', "name").exec( (err, comments)=>{
+            console.log(article)
             res.render("singlearticle", {article:article, comments:comments})
         });
     });
@@ -62,4 +63,6 @@ router.get('/:id/delete', auth.checkUserLogin, (req, res) =>{
         res.redirect("/articles/");
     });
 });
+
 module.exports = router;
+

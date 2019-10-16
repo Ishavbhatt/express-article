@@ -6,9 +6,9 @@ var logger = require('morgan');
 var mongoose = require('mongoose');
 var session = require ('express-session');
 var MongoStore = require('connect-mongo')(session);
-var Article = require('./models/article');
-var Comment = require('./models/comment');
-var User = require('./models/user');
+// var Article = require('./models/article');
+// var Comment = require('./models/comment');
+// var User = require('./models/user');
 var auth = require('./middleware/auth');
 
 var indexRouter = require('./routes/index');

@@ -1,13 +1,10 @@
 <% include partials/header %>
-<h1> Lists of Articles <h1>
-<a href="/articles/add">Create New Article</a>
+<h2><a href="/articles/add">create new article</a></h2>
+<h1> Lists of Articles: <h1>
 <% articlelist.forEach(article =>{ %>
 	<a href="/articles/<%= article.id %>"></a>
-	<h1> <%= article.title %></h1>
+	<h2> <%= article.title %></h2>
 	<a href="/articles/<%= article.id %>/edit">Edit</a> 
 	<a href="/articles/<%= article.id %>/delete">Delete</a>
 	<a href="/articles/<%= article.id %>">More</a>
 <% }) %>
-<div>
-	<a href="/users/logout">Logout</a>
-</div>

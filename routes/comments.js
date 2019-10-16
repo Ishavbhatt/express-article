@@ -1,10 +1,13 @@
 var express = require('express');
 var router = express.Router();
 var Comment = require('../models/comment');
+var auth = require('../middleware/auth');
+
 
 
 
 router.post('/', (req, res)=>{
+	req.body.author = req.user.id;
 	if (req.session && req.session.userid) {
 		Comment.create(req.body, (err, comment)=>{
 			if (err) return res.json({ err });
@@ -16,15 +19,11 @@ router.post('/', (req, res)=>{
 });
 
 // Edit comment
-router.get('/:id/edit', (req, res)=>{
-	if (req.session && req.session.userid) {
+router.get('/:id/edit', auth.checkUserLogin, (req, res)=>{
 		Comment.findById(req.params.id, (err, comment) => {
 			if (err) return res.json({err});
 			res.render("editcomment", {comment:comment});
 		});
-	} else {
-		res.redirect("/users/login");
-	}
 });
 
 // Update comment
@@ -36,15 +35,12 @@ router.post('/:id/update', (req, res) => {
 });
 
 // Delete comment
-router.get('/:id/delete', (req, res) =>{
-	if (req.session && req.session.userid) {
+router.get('/:id/delete', auth.checkUserLogin, (req, res) => {
 		Comment.findByIdAndRemove(req.params.id, (err, comment) => {
 			if(err) return res.json({err});
 			res.redirect("/articles/" + comment.articleId);
 		});
-	} else {
-		res.redirect("/users/login");
-	}
+
 });
 
 

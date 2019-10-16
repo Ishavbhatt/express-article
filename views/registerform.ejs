@@ -3,11 +3,17 @@
   <head>
   </head>
   <body>
-    <form action="/users/register" method="POST">
-      	<input type="text" name="name" placeholder="Name">
-      	<input type="email" name="email" placeholder="Email">
-      	<input type="password" name="password" placeholder="Password">
-        <input type="submit" value="Register">
-    </form>
+    <div class="registerform">
+        <h1> Registeration: </h1>
+        <form action="/users/register" method="POST">
+          <label for="name">Name</label>
+          <input type="text" name="name" placeholder="Name">
+          <label for="email">Email</label>
+          <input type="email" name="email" placeholder="Email">
+          <label for="password">Password</label>
+          <input type="password" name="password" placeholder="Password">
+          <input type="submit" value="Register">
+      </form>
+    </div>
   </body>
 </html>

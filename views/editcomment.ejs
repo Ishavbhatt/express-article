@@ -6,7 +6,8 @@
   <title></title>
 </head>
 <body>
-  	<form action="/comments/<%= comment.id %>/update" method="POST">
+    <form action="/comments/<%= comment.id %>/update" method="POST">
+        <h2>Edit Comment:</h2>
         <input type="text" name="content" value="<%=comment.content%>">
         <input type="submit" value="Update">
     </form>
