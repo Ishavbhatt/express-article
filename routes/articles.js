@@ -18,7 +18,7 @@ router.get("/add", auth.checkUserLogin, (req, res) => {
     res.render("addform");
 });
 
-// Lists of Articles
+// Create new Article
 router.post("/", auth.checkUserLogin, (req, res)=>{
     console.log(req.body);
     req.body.authorId = req.user.id;
@@ -31,11 +31,17 @@ router.post("/", auth.checkUserLogin, (req, res)=>{
 
 // Edit a Article
 router.get('/:id/edit', auth.checkUserLogin,  (req, res)=>{
-    Article.findById(req.params.id, (err, article)=>{
-        if (err) return res.json({err});
-        res.render('editarticle', {article});
-    })
-})
+    Article.findById(req.params.id, (err, article) =>{
+        if(req.user._id.equals(article.authorId)) {
+            Article.findById(req.params.id, (err, article)=>{
+                if (err) return res.json({err});
+                res.render('editarticle', {article});
+            });
+        } else {
+            res.send("Not Allowed");
+        }
+    });
+});
 
 // Update a Article
 router.post("/:id", auth.checkUserLogin, (req, res)=>{
@@ -56,9 +62,15 @@ router.get('/:id', (req, res)=>{
 
 // Delete Article
 router.get('/:id/delete', auth.checkUserLogin, (req, res) =>{
-    Article.findByIdAndRemove(req.params.id, (err,user)=>{
-        if (err) return res.json({err});
-        res.redirect("/articles/");
+    Article.findById(req.params.id, (err, user)=>{
+        if(req.user._id.equals(user.authorId)) {
+            Article.findByIdAndRemove(req.params.id, (err,user)=>{
+                if (err) return res.json({err});
+                res.redirect("/articles/");
+            });
+        } else {
+            res.send("Not Allowed");
+        }
     });
 });
 

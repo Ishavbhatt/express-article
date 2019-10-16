@@ -43,7 +43,7 @@ router.post('/:id/update', (req, res) => {
 // Delete comment
 router.get('/:id/delete', auth.checkUserLogin, (req, res) => {
 	Comment.findById(req.params.id, (err, comment) => {
-		console.log(req.user.id, comment.author, req.user.id.toString() === comment.author.toString(), typeof req.user.id)
+		// console.log(req.user.id, comment.author, req.user.id.toString() === comment.author.toString(), typeof req.user.id)
 		if(req.user._id.equals(comment.author)) {
 			Comment.findByIdAndRemove(req.params.id, (err, comment) => {
 				if(err) return res.json({err});
