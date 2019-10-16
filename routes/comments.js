@@ -20,10 +20,16 @@ router.post('/', (req, res)=>{
 
 // Edit comment
 router.get('/:id/edit', auth.checkUserLogin, (req, res)=>{
-		Comment.findById(req.params.id, (err, comment) => {
-			if (err) return res.json({err});
-			res.render("editcomment", {comment:comment});
-		});
+	Comment.findById(req.params.id, (err, comment) =>{
+		if(req.user._id.equals(comment.author)) {
+			Comment.findById(req.params.id, (err, comment) => {
+				if (err) return res.json({err});
+				res.render("editcomment", {comment:comment});
+			});
+		} else {
+			res.send("You Are Not Authorised");
+		}
+	});
 });
 
 // Update comment
@@ -36,11 +42,17 @@ router.post('/:id/update', (req, res) => {
 
 // Delete comment
 router.get('/:id/delete', auth.checkUserLogin, (req, res) => {
-		Comment.findByIdAndRemove(req.params.id, (err, comment) => {
-			if(err) return res.json({err});
-			res.redirect("/articles/" + comment.articleId);
-		});
-
+	Comment.findById(req.params.id, (err, comment) => {
+		console.log(req.user.id, comment.author, req.user.id.toString() === comment.author.toString(), typeof req.user.id)
+		if(req.user._id.equals(comment.author)) {
+			Comment.findByIdAndRemove(req.params.id, (err, comment) => {
+				if(err) return res.json({err});
+				res.redirect("/articles/" + comment.articleId);
+			});
+		} else {
+			res.send("Not Allowed");
+		}
+	});
 });
 
 

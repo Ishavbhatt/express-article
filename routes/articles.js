@@ -40,7 +40,6 @@ router.get('/:id/edit', auth.checkUserLogin,  (req, res)=>{
 // Update a Article
 router.post("/:id", auth.checkUserLogin, (req, res)=>{
 	Article.findByIdAndUpdate(req.params.id, req.body, (err, updatedArticle)=>{
-		console.log(req.body);
 		if (err) return res.json({err})
 			res.redirect("/articles");
 	});
@@ -50,7 +49,6 @@ router.post("/:id", auth.checkUserLogin, (req, res)=>{
 router.get('/:id', (req, res)=>{
     Article.findById(req.params.id).populate('authorId', "name email").exec( (err, article)=>{
         Comment.find({articleId: req.params.id}).populate('author', "name").exec( (err, comments)=>{
-            console.log(article)
             res.render("singlearticle", {article:article, comments:comments})
         });
     });
