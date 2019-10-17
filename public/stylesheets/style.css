@@ -7,49 +7,71 @@ a {
   color: blue;
 }
 
+.headerlist {
+  text-align: center;
+  color: #282828;
+  font-size: 50px;
+  font-weight: 100;
 }
-/* .form {
-  margin: 40px;
-  position: absolute;
+.articletitle {
+  text-align: center;
+  color: #4C4C4C;
+  font-size: 30px;
+  font-weight: 100;
 }
-label {
-  color:  #c2c2c5;
-  display: block;
-  font-size: 14px;
-  height: 16px;
+.articlebutton {
+  text-align: center;
+}
+.editbutton, .deletebutton, .morebutton {
+  background-color: white;
+  border: 1px solid aqua;
+  border-radius: 19px;
+  margin: 5px 5px;
+  padding: 5px 5px;
+  font-size: 19px;
+}
+.aquabutton {
+  color: aqua;
+}
+.newarticleheader, .authorname, .single-home {
+  text-align: center;
+}
+.single-header {
+  text-align: center;
+  font-size: 40px;
+  font-weight: 100;
+}
+.single-deslik {
+  text-align: center;
+  font-size: 15px;
+  color: #B5C588;
+}
+.like-button {
+  text-align: center;
+}
+.single-author {
+  text-align: center;
+  color: #BF312F;
+}
+span {
+  color: black;
+}
+.comment-header, .comment-text, .comment-secttion {
+  text-align: center;
+}
+
+.comment-author {
+  text-align: center;
+  color: #BF312F;
+  padding-left: 40px;
+  padding-bottom: 20px;
+}
+.comment-input {
   margin-top: 20px;
-  margin-bottom: 5px;
+  padding: 10px;
 }
-input {
-  background: transparent;
-  border: 0;
-  color: #f2f2f2;
-  font-size: 20px;
-  height: 30px;
-  line-height: 30px;
-  outline: none !important;
-  width: 100%;
+.comment-button {
+  background-color: mediumspringgreen;
+  color: aliceblue;
+  font-size: 25px;
 }
-input::-moz-focus-inner { 
-  border: 0; 
-}
-#submit {
-  color: #707075;
-  margin-top: 40px;
-  transition: color 300ms;
-}
-#submit:focus {
-  color: #f2f2f2;
-}
-#submit:active {
-  color: #d0d0d2;
-}
-input[type=submit] {
-  width: 80%;
-  padding: 15px 22px;
-  margin: 10px 5px;
-  box-sizing: border-box;  
-}
-.registerform {
-  
-} */

@@ -6,18 +6,14 @@
   <title></title>
 </head>
   <body>
-    <header>
-      <h1>Articles</h1>
-      
-    </header>
-
-    <% if(user) { %>
-          <h3><%= user.name %></h3>
-          <p><%= user.email %></p>
-          <a href="/users/logout">Logout</a>
+      <% if(user) { %>
+          <h3 class="authorname">Author Name: <%= user.name %></h3>
+          <h3 class="authorname">Author Email: <%= user.email %></h3>
+          <!-- <a href="/articles/mylists">My Articles</a> -->
+          <h3 class="authorname"><a href="/users/logout">Logout</a></h3>
       <% } else { %>
-          <a href="/users/login">Login</a>
-          <a href="/users/register">Register</a>
+          <a class="headerlogreg" href="/users/login">Login</a>
+          <a class="headerlogreg" href="/users/register"> / Register</a>
       <% } %>
   </body>
 </html>

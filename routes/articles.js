@@ -74,5 +74,12 @@ router.get('/:id/delete', auth.checkUserLogin, (req, res) =>{
     });
 });
 
+router.get("/mylists", auth.checkUserLogin, (req, res) =>{
+    Article.find({authorId: req.user.id}, (err, articles)=>{
+        if (err) res.json({err});
+        res.render('myarticles', {articles});
+    });
+});
+
 module.exports = router;
 

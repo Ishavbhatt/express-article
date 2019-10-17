@@ -3,31 +3,33 @@
 	<head>
 	  <link rel="stylesheet" href="/stylesheets/style.css">
 	  <meta charset="utf-8">
-	  <title></title>
 	</head>
 		<body>
-			<a href="/articles">Home</a> 
-			<h2><%=article.title%></h2>
-			<h2><%=article.description%></h2>
-			<h4><%=article.likes%></h4>
-			<p><%= article.authorId.name %></p>
-			<p><%= article.authorId.email %></p>
-			<!-- <h3><%=article.author%></h3> -->
+			<h2 class="single-home">Click here to go back to <a href="/articles"> home</a></h2> 
+			<h1 class="single-header"><%=article.title%></h1>
+			<h3 class="single-deslik"><%=article.description%></h2>
+			<h3 class="single-deslik"><%=article.likes%></h3>
+			<div class="like-button"><button>Like</button></div>
+			<p class="single-author"><span>Written By:</span> <%= article.authorId.name %></p>
+			<p class="single-author"><%= article.authorId.email %></p>
+		
 			
 			<div>
-				<h1>Comments:</h1>
+				<h1 class="comment-header">Comments:</h1>
 				<% comments.forEach((comment) =>{ %>
-					<h2> <%= comment.content %></h2>
-					<p> <%= comment.author.name %></p>
-					<a href="/comments/<%=comment.id%>/edit">Edit</a>
-					<a href="/comments/<%=comment.id%>/delete">Delete</a>
+					<h2 class="comment-text"> <%= comment.content %></h2>
+					<p class="comment-author"> <%= comment.author.name %></p>
+					<div class="articlebutton">
+						<button class="editbutton"><a class="aquabutton" href="/comments/<%=comment.id%>/edit">Edit</a></button>
+						<button class="deletebutton"><a class="aquabutton" href="/comments/<%=comment.id%>/delete">Delete</a></button>
+					</div>
 				<% }) %>
 			</div>
-			<div>
+			<div class="comment-secttion">
 				<form action="/comments" method="POST">
-					<input type="text" name="content" placeholder="Add your comment">
+					<input class="comment-input" type="text" name="content" placeholder="Add your comment">
 					<input type="hidden" name="articleId" value="<%= article.id%>">
-					<input type="submit" value="comment">
+					<button class="comment-button" type="submit">Comment</button>
 				</form>
 			</div>
 		</body>
