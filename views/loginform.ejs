@@ -4,16 +4,18 @@
   <head>
   </head>
   <body>
-      <h1> Login Here: </h1>
+      <h1 class="login-header"> Login Here: </h1>
       <div class="container">
           <form action="/users/login" method="POST">
-              <label><b></label>Email</b></label>
-              <input type="email" name="email" placeholder="Email">
-
-              <label><b>Password</b></label>
-              <input type="text" name="password" placeholder="Password">
-
-            <button type="submit">Log In</button>
+            <div class="email-input">
+              <input class="login-input" type="email" name="email" placeholder="Email">
+            </div>
+            <div class="email-pass">        
+              <input class="login-input" type="text" name="password" placeholder="Password">
+            </div>
+            <div class="login-div">
+              <button class="login-button" type="submit">Log In</button>
+            </div>            
           </form>
       </div>
   </body>

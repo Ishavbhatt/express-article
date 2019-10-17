@@ -75,3 +75,40 @@ span {
   color: aliceblue;
   font-size: 25px;
 }
+.comntainer {
+  display: flex;
+}
+.email-input, .email-pass, .email-name {
+  text-align: center;
+}
+.login-input, .regis-input {
+  font-size: 20px;
+  padding: 10px;
+  border: 1px solid aqua;
+  border-radius: 20px;
+}
+.email-input {
+  padding: 30px;
+}
+.login-header, .register-header {
+  text-align: center;
+  font-size: 40px;
+  font-weight: 100;
+  color: aqua;
+}
+.login-div, .regis-div {
+  text-align: center;
+  padding: 20px;
+}
+.login-button, .regis-button {
+  font-size: 20px;
+  padding: 10px;
+  border: 1px solid aqua;
+  border-radius: 20px;
+  background-color: white;
+  
+}
+.register-header {
+  text-align: center;
+  font-size: 70px;
+}

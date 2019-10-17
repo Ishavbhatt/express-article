@@ -1,19 +1,25 @@
 <!DOCTYPE html>
 <html>
+    <link rel="stylesheet" href="/stylesheets/style.css"
   <head>
   </head>
   <body>
-    <div class="registerform">
-        <h1> Registeration: </h1>
-        <form action="/users/register" method="POST">
-          <label for="name">Name</label>
-          <input type="text" name="name" placeholder="Name">
-          <label for="email">Email</label>
-          <input type="email" name="email" placeholder="Email">
-          <label for="password">Password</label>
-          <input type="password" name="password" placeholder="Password">
-          <input type="submit" value="Register">
-      </form>
-    </div>
+      <h1 class="register-header"> Registeration: </h1>
+      <div class="registerform"></div>
+          <form action="/users/register" method="POST">
+            <div class="email-name">
+                <input class="regis-input" type="text" name="name" placeholder="Name">
+            </div>
+            <div class="email-input">
+                <input class="regis-input" type="email" name="email" placeholder="Email">
+            </div>
+            <div class="email-pass">
+                <input class="regis-input" type="password" name="password" placeholder="Password">
+            </div>
+            <div class="regis-div">
+                <button class="regis-button" type="submit">Submit</button>
+            </div>
+          </form>
+      </div>
   </body>
 </html>
