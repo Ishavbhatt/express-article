@@ -6,22 +6,65 @@ body {
 a {
   color: blue;
 }
+/* header */
+.headeruser {
+  overflow: hidden;
+  background-color: #f1f1f1;
+  padding: 20px 10px;
+}
+.authorname {
+  float: left;
+  color: blue;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 25px;
+  border-radius: 4px;
+}
+.header-articleworld {
+  color: #4C4C4C;
+}
+
+.header-right {
+  float: right;
+}
 
 .headerlist {
-  text-align: center;
+  /* text-align: center; */
+  padding-left: 50px;
   color: #282828;
   font-size: 50px;
   font-weight: 100;
 }
 .articletitle {
-  text-align: center;
+  /* text-align: center; */
+  padding-left: 50px;
   color: #4C4C4C;
   font-size: 30px;
   font-weight: 100;
 }
+
+.articlelikes {
+/* text-align: center; */
+padding-left: 50px;
+color: steelblue;
+font-size: 20px;
+font-weight: 100;
+}
+
+.articledate {
+  color: #987B7B;
+  font-size: 15px;
+  font-weight: 100;
+  padding-left: 50px;
+}
+
 /* buttons */
+
 .articlebutton {
-  text-align: center;
+  /* text-align: center; */
+  padding-left: 50px;
 }
 .editbutton, .deletebutton, .morebutton {
   background-color: white;
@@ -34,7 +77,7 @@ a {
 .aquabutton {
   color: aqua;
 }
-.newarticleheader, .authorname, .single-home {
+.newarticleheader, .single-home {
   text-align: center;
 }
 .single-header {
@@ -76,6 +119,9 @@ span {
   background-color: mediumspringgreen;
   color: aliceblue;
   font-size: 25px;
+}
+.commentbutton {
+  text-align: center;
 }
 span {
   color: black;
@@ -152,4 +198,8 @@ span {
   border: 1px solid aqua;
   border-radius: 10px;
   margin: 10px;
+}
+.loginback-button {
+  padding-left: 460px;
+  color: #BF312F;
 }

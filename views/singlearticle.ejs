@@ -20,7 +20,7 @@
 				<% comments.forEach((comment) =>{ %>
 					<h2 class="comment-text"> <%= comment.content %></h2>
 					<p class="comment-author"> <%= comment.author.name %></p>
-					<div class="articlebutton">
+					<div class="commentbutton">
 						<button class="editbutton"><a class="aquabutton" href="/comments/<%=comment.id%>/edit">Edit</a></button>
 						<button class="deletebutton"><a class="aquabutton" href="/comments/<%=comment.id%>/delete">Delete</a></button>
 					</div>

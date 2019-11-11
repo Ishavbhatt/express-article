@@ -4,6 +4,9 @@
 <% articlelist.forEach(article =>{ %>
 	<a href="/articles/<%= article.id %>"></a>
 	<h2 class="articletitle"> <%= article.title %></h2>
+	<p class="single-author"><%= article.authorId.name %></p>
+	<h4 class="articledate"> <%= article.created_at %></h4>
+	<h2 class="articlelikes"> <%= article.likes %> likes</h2>
 	<div class="articlebutton">
 		<button class="editbutton"><a class="aquabutton" href="/articles/<%= article.id %>/edit">Edit</a></button>
 		<button class="deletebutton"><a class="aquabutton" href="/articles/<%= article.id %>/delete">Delete</a></button>

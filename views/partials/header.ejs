@@ -6,7 +6,16 @@
   <title></title>
 </head>
   <body>
-      <% if(user) { %>
+      <div class="headeruser">
+          <h1 class="header-articleworld authorname">ArticlesWorld</h1>
+          <div class="header-right">
+              <a class="header-articleworld authorname" href="">Login User: <span><%= user.name %></span></a>
+              <a class="authorname" href="/users/logout">Logout</a>
+            <a class="authorname" href="/articles/mylists">My Articles</a>
+          </div>
+        </div>
+
+      <!-- <% if(user) { %>
           <h3 class="authorname">Login User: <span><%= user.name %></span></h3>
           <h3 class="authorname">Login User Email: <span><%= user.email %></span></h3>
           <h3 class="myarticles-list"><a href="/articles/mylists">My Articles</a></h3>
@@ -14,6 +23,6 @@
       <% } else { %>
           <a class="headerlogreg" href="/users/login">Login</a>
           <a class="headerlogreg" href="/users/register"> / Register</a>
-      <% } %>
+      <% } %> -->
   </body>
 </html>

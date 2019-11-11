@@ -8,10 +8,10 @@
 		<body>
             <a href="/articles">Home</a>
             <% articles.forEach((article) =>{ %> 
-                <h2><%= article.title%></h2>
-                <h2><%= article.description%></h2>
-                <h4><%= article.likes%></h4>
-                <button type="button" name="like">Like</button>
+                <h1><%= article.title%></h1>
+                <h3><%= article.description%></h3>
+                <h4><%= article.likes%> likes</h4>
+                <!-- <button type="button" name="like">Like</button> -->
            <% })%>
 		</body>
 </html>

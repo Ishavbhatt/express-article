@@ -19,7 +19,11 @@ var articleSchema = new Schema({
 		type: Schema.Types.ObjectId,
 		ref: 'User',
 		required: true
-	}
+	},
+	created_at: { 
+		type: Date,
+		default: Date.now
+	 }
 }, {timestams: true})
 
 var Article = mongoose.model("Article", articleSchema);
