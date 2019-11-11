@@ -3,9 +3,18 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var articleSchema = new Schema({
-	title: String,
-	description: String,
-	likes: Number,
+	title: {
+		type: String,
+		required: true
+	},
+	description: {
+		type: String,
+		required: true
+	},
+	likes: {
+		type: Number,
+		default: 0
+	},
 	authorId: {
 		type: Schema.Types.ObjectId,
 		ref: 'User',

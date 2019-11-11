@@ -9,10 +9,11 @@
 			<h1 class="single-header"><%=article.title%></h1>
 			<h3 class="single-deslik"><%=article.description%></h2>
 			<h3 class="single-deslik"><%=article.likes%></h3>
-			<div class="like-button"><button>Like</button></div>
-			<p class="single-author"><span>Written By:</span> <%= article.authorId.name %></p>
+			<div class="like-button">
+				<button><a href="/articles/<%= article.id %>/like">Like</a></button>
+			</div>
+			<p class="single-author"><span class="span-Written">Written By:</span> <%= article.authorId.name %></p>
 			<p class="single-author"><%= article.authorId.email %></p>
-		
 			
 			<div>
 				<h1 class="comment-header">Comments:</h1>

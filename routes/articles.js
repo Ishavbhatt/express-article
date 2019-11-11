@@ -7,9 +7,9 @@ var auth = require('../middleware/auth');
 
 // Lists of Articles
 router.get("/", (req, res)=>{
-    Article.find({}, (err, articlelist)=>{
-		if(err) return res.json({err});
-		res.render('articles', {articlelist});
+        Article.find({}, (err, articlelist)=>{
+            if(err) return res.json({err});
+            res.render('articles', {articlelist});
     });
 });
 
@@ -22,11 +22,17 @@ router.get("/add", auth.checkUserLogin, (req, res) => {
 router.post("/", auth.checkUserLogin, (req, res)=>{
     console.log(req.body);
     req.body.authorId = req.user.id;
-    Article.create(req.body, (err, articlelist)=>{
-        console.log(err, articlelist);
+    Article.create(req.body, (err, articlelist)=>{        
         if(err) return res.json({err})
         res.redirect("/articles");
     })
+});
+
+// Like a article
+router.get("/:id/like", (req, res) => {
+   Article.findByIdAndUpdate(req.params.id, {$inc: {likes: 1}}, (err, article) => {
+      res.redirect('/articles/' + req.params.id);
+   })
 });
 
 // Edit a Article
@@ -49,6 +55,14 @@ router.post("/:id", auth.checkUserLogin, (req, res)=>{
 		if (err) return res.json({err})
 			res.redirect("/articles");
 	});
+});
+
+// Lists of MY Articles
+router.get("/mylists", auth.checkUserLogin, (req, res) =>{
+        Article.find({authorId: req.user.id}, (err, articles)=>{
+            if (err) res.json({err});
+            res.render('myarticles', {articles});
+        });
 });
 
 // Shows article with all comments
@@ -74,12 +88,7 @@ router.get('/:id/delete', auth.checkUserLogin, (req, res) =>{
     });
 });
 
-router.get("/mylists", auth.checkUserLogin, (req, res) =>{
-    Article.find({authorId: req.user.id}, (err, articles)=>{
-        if (err) res.json({err});
-        res.render('myarticles', {articles});
-    });
-});
+
 
 module.exports = router;
 

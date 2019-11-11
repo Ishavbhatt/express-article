@@ -6,12 +6,26 @@
   <title></title>
 </head>
 <body>
-	<form action="/articles/<%= article.id %>" method="POST">
-	    <input type="text" name="title" value="<%= article.title %>">
-	    <input type="text" name="description" value="<%= article.description %>">
-	    <input type="number" name="likes" value="<%= article.likes %>">
-	    <input type="submit" value="Update">
-	</form>
+	<div>
+		<a href="/articles">Home</a>
+	</div>
+	<h1 class="editarticle-header">Edit the Article:</h1>
+	<div class="create-article">
+			<form action="/articles/<%= article.id %>" method="POST">
+				<div class="div-input">
+					<input class="create-input" type="text" name="title" placeholder="Title" value="<%= article.title %>">
+				</div>
+				<div class="div-input">
+					<input class="createdes-input" type="textarea" name="description" placeholder="Description" value="<%= article.description %>">
+				</div>
+				<div class="div-input">
+					<input class="create-input" type="number" name="likes" placeholder="Likes" value="<%= article.likes %>">
+				</div>
+				<div class="div-input">
+					<input class="create-input" type="submit" value="Update">
+				</div>
+			</form>
+		</div>
 </form>
 </body>
 </html>

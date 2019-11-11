@@ -7,9 +7,9 @@
 </head>
   <body>
       <% if(user) { %>
-          <h3 class="authorname">Author Name: <%= user.name %></h3>
-          <h3 class="authorname">Author Email: <%= user.email %></h3>
-          <!-- <a href="/articles/mylists">My Articles</a> -->
+          <h3 class="authorname">Login User: <span><%= user.name %></span></h3>
+          <h3 class="authorname">Login User Email: <span><%= user.email %></span></h3>
+          <h3 class="myarticles-list"><a href="/articles/mylists">My Articles</a></h3>
           <h3 class="authorname"><a href="/users/logout">Logout</a></h3>
       <% } else { %>
           <a class="headerlogreg" href="/users/login">Login</a>

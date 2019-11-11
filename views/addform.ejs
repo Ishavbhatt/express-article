@@ -9,12 +9,21 @@
 	<div>
 		<a href="/articles">Home</a>
 	</div>
-	<div>
+	<h1 class="createarticle-header">Create New Article</h1>
+	<div class="create-article">
 		<form action="/articles" method="POST">
-			<input type="text" name="title" placeholder="Title">
-			<input type="text" name="description" placeholder="Description">
-			<input type="number" name="likes" placeholder="Likes">
-			<input type="submit" value="Create">
+			<div class="div-input">
+				<input class="create-input" type="text" name="title" placeholder="Title">
+			</div>
+			<div class="div-input">
+				<input class="createdes-input" type="textarea" name="description" placeholder="Description">
+			</div>
+			<div class="div-input">
+			    <input class="create-input" type="number" name="likes" placeholder="Likes">
+			</div>
+			<div class="div-input">
+				<input class="create-input" type="submit" value="Create">
+			</div>
 		</form>
 	</div>
 </body>
