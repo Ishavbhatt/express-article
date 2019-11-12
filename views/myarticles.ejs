@@ -6,12 +6,17 @@
 	  <title></title>
 	</head>
 		<body>
-            <a href="/articles">Home</a>
-            <% articles.forEach((article) =>{ %> 
-                <h1><%= article.title%></h1>
-                <h3><%= article.description%></h3>
-                <h4><%= article.likes%> likes</h4>
-                <!-- <button type="button" name="like">Like</button> -->
-           <% })%>
+            <h3 class="myarticle-home"><a href="/articles">Home</a></h3>
+            <% articles.forEach(article =>{ %>
+              <a href="/articles/<%= article.id %>"></a>
+              <h2 class="articletitle"> <%= article.title %></h2>
+              <h4 class="articledate"> <%= article.created_at %></h4>
+              <h2 class="articlelikes"> <%= article.likes %> likes</h2>
+              <div class="articlebutton">
+                <button class="editbutton"><a class="aquabutton" href="/articles/<%= article.id %>/edit">Edit</a></button>
+                <button class="deletebutton"><a class="aquabutton" href="/articles/<%= article.id %>/delete">Delete</a></button>
+                <button class="morebutton"><a class="aquabutton" href="/articles/<%= article.id %>">More</a></button>
+              </div>
+            <% }) %>
 		</body>
 </html>

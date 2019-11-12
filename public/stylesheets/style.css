@@ -10,7 +10,7 @@ a {
 .headeruser {
   overflow: hidden;
   background-color: #f1f1f1;
-  padding: 20px 10px;
+  
 }
 .authorname {
   float: left;
@@ -24,6 +24,11 @@ a {
 }
 .header-articleworld {
   color: #4C4C4C;
+  font-weight: 100;
+}
+
+.headerlogreg {
+  padding-left: 50px;
 }
 
 .header-right {
@@ -202,4 +207,8 @@ span {
 .loginback-button {
   padding-left: 460px;
   color: #BF312F;
+}
+/* my articles */
+.myarticle-home {
+  padding-left: 50px;
 }
