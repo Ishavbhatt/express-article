@@ -8,7 +8,6 @@
   <body>
       <% if(user) { %>
         <div class="headeruser">
-          <img class="authorname" src="/public/images/article.png/" alt="logo">
           <h1 class="header-articleworld authorname">ArticlesWorld</h1>
           <div class="header-right">
               <a class="header-articleworld authorname" href="">Login User: <span><%= user.name %></span></a>
@@ -18,8 +17,13 @@
         </div>
       <% } else { %>
         <div class="headerlogreg">
+          <div>
+            <h1 class="header-articleworld authorname">ArticlesWorld</h1>
+          </div>
+          <div>
             <a class="headerlogreg-a" href="/users/login">Login</a>
             <a class="headerlogreg-a" href="/users/register"> / Register</a>
+          </div>
         </div>
       <% } %>
   </body>

@@ -8,6 +8,8 @@
 		<body>
             <h3 class="myarticle-home"><a href="/articles">Home</a></h3>
             <% articles.forEach(article =>{ %>
+			<div class="articles-box">
+
               <a href="/articles/<%= article.id %>"></a>
               <h2 class="articletitle"> <%= article.title %></h2>
               <h4 class="articledate"> <%= article.created_at %></h4>
@@ -17,6 +19,7 @@
                 <button class="deletebutton"><a class="aquabutton" href="/articles/<%= article.id %>/delete">Delete</a></button>
                 <button class="morebutton"><a class="aquabutton" href="/articles/<%= article.id %>">More</a></button>
               </div>
+            </div>
             <% }) %>
 		</body>
 </html>

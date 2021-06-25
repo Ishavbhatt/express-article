@@ -6,17 +6,32 @@
     "start": "nodemon ./bin/www"
   },
   "dependencies": {
-    "bcrypt": "^3.0.6",
+    "bcrypt": "^3.0.7",
     "connect-mongo": "^3.0.0",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "ejs": "~2.6.1",
     "express": "~4.16.1",
     "express-session": "^1.17.0",
+    "heroku": "^7.54.1",
     "http-errors": "~1.6.3",
     "mongo-store": "0.0.2",
     "mongoose": "^5.7.3",
     "morgan": "~1.9.1",
+    "nodemon": "^2.0.2",
     "path": "^0.12.7"
-  }
+  },
+  "main": "app.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ishavbhatt/express-article.git"
+  },
+  "author": "ishavbhatt",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ishavbhatt/express-article/issues"
+  },
+  "homepage": "https://github.com/Ishavbhatt/express-article#readme",
+  "description": ""
 }
