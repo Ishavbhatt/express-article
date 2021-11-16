@@ -2,7 +2,7 @@
 <html lang="en">
 	<head>
 	  <link rel="stylesheet" href="/stylesheets/style.css">
-	  <meta charset="utf-8">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
 	  <title></title>
 	</head>
 		<body>
@@ -12,12 +12,12 @@
 
               <a href="/articles/<%= article.id %>"></a>
               <h2 class="articletitle"> <%= article.title %></h2>
-              <h4 class="articledate"> <%= article.created_at %></h4>
-              <h2 class="articlelikes"> <%= article.likes %> likes</h2>
+			<h4 class="articledate"> <%= article.created_at %></h4>
+			<small class="articlelikes"> <%= article.likes %> likes</small>
               <div class="articlebutton">
-                <button class="editbutton"><a class="aquabutton" href="/articles/<%= article.id %>/edit">Edit</a></button>
-                <button class="deletebutton"><a class="aquabutton" href="/articles/<%= article.id %>/delete">Delete</a></button>
-                <button class="morebutton"><a class="aquabutton" href="/articles/<%= article.id %>">More</a></button>
+               <a class="button is-primary is-light" href="/articles/<%= article.id %>/edit">Edit</a>
+               <a class="button is-danger is-light" href="/articles/<%= article.id %>/delete">Delete</a>
+               <a class="button is-info is-light" href="/articles/<%= article.id %>">More</a>
               </div>
             </div>
             <% }) %>

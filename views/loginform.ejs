@@ -1,24 +1,33 @@
 <!DOCTYPE html>
 <html>
-  <link rel="stylesheet" href="/stylesheets/style.css"
+  <link rel="stylesheet" href="/stylesheets/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+
   <head>
   </head>
   <body>
-      <h1 class="login-header"> Login Here: </h1>
+    <div class="login-page">
+      <h1 class="login-header title"> Login Here: </h1>
       <div class="container">
           <form action="/users/login" method="POST">
-            <div class="email-input">
-              <input class="login-input" type="email" name="email" placeholder="Email">
+            <div class="marginb-20">
+              <input class="input is-primary" type="email" name="email" placeholder="Email">
             </div>
-            <div class="email-pass">        
-              <input class="login-input" type="text" name="password" placeholder="Password">
+            <div class="marginb-20">        
+              <input class="input is-primary" type="text" name="password" placeholder="Password">
             </div>
-            <p class="dont">Don't have an account <a href="/users/register/">register</a> first</p>
-            <div class="login-div">
-              <button class="login-button" type="submit">Log In</button>
-            </div>
-            <p class="loginback-button"><a href="/articles/">Back</a></p>   
+            <p class="dont marginb-20">Don't have an account <a href="/users/register/">register</a> first</p>
+            <center>
+              <button class="button is-success is-outlined marginb-20" type="submit">Log In</button>
+            </center>
+             <center>
+              <a href="/articles/" class="button is-danger is-outlined">Back</a>
+
+             </center>
+            
           </form>
       </div>
+    </div>
+
   </body>
 </html>

@@ -2,29 +2,33 @@
 <html lang="en">
 <head>
   <link rel="stylesheet" href="/stylesheets/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
   <meta charset="utf-8">
   <title></title>
 </head>
 <body>
-	<div>
-		<a href="/articles">Home</a>
-	</div>
-	<h1 class="createarticle-header">Create New Article</h1>
+	<div class="addpage">
+	
+	<h1 class="createarticle-header title">Create New Article</h1>
 	<div class="create-article">
 		<form action="/articles" method="POST">
-			<div class="div-input">
-				<input class="create-input" type="text" name="title" placeholder="Title">
+			<div class="marginb-20">
+				<input class="input" type="text" name="title" placeholder="Title">
 			</div>
-			<div class="div-input">
-				<input class="createdes-input" type="textarea" name="description" placeholder="Description">
+			<div class="marginb-20">
+				<input class="textarea" type="textarea" name="description" placeholder="Description">
 			</div>
-			<div class="div-input">
-			    <input class="create-input" type="number" name="likes" placeholder="Likes">
+			<div class="marginb-20">
+			    <input class="input" type="number" name="likes" placeholder="Likes">
 			</div>
-			<div class="div-input">
-				<input class="create-input" type="submit" value="Create">
-			</div>
+			<center class="marginb-20">
+				<input class="button is-success is-outlined" type="submit" value="Create Article">
+			</center>
 		</form>
 	</div>
+	<center>
+		<a href="/articles" class="button is-danger is-outlined">Back</a>
+	</center>
+</div>
 </body>
 </html>

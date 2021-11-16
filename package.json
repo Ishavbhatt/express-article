@@ -7,6 +7,7 @@
   },
   "dependencies": {
     "bcrypt": "^3.0.7",
+    "bulma": "^0.9.3",
     "connect-mongo": "^3.0.0",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
@@ -22,7 +23,6 @@
     "path": "^0.12.7"
   },
   "main": "app.js",
-  "devDependencies": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Ishavbhatt/express-article.git"

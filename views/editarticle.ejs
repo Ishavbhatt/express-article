@@ -2,30 +2,33 @@
 <html lang="en">
 <head>
   <link rel="stylesheet" href="/stylesheets/style.css">
-  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
   <title></title>
 </head>
 <body>
-	<div>
-		<a href="/articles">Home</a>
-	</div>
-	<h1 class="editarticle-header">Edit the Article:</h1>
+	<div class="createarticle-page">
+	<h1 class="createarticle-header title">Edit the Article:</h1>
 	<div class="create-article">
 			<form action="/articles/<%= article.id %>" method="POST">
-				<div class="div-input">
-					<input class="create-input" type="text" name="title" placeholder="Title" value="<%= article.title %>">
+				<div class="marginb-20">
+					<input class="input" type="text" name="title" placeholder="Title" value="<%= article.title %>">
 				</div>
-				<div class="div-input">
-					<input class="createdes-input" type="textarea" name="description" placeholder="Description" value="<%= article.description %>">
+				<div class="marginb-20">
+					<input class="textarea" type="textarea" name="description" placeholder="Description" value="<%= article.description %>">
 				</div>
-				<div class="div-input">
-					<input class="create-input" type="number" name="likes" placeholder="Likes" value="<%= article.likes %>">
+				<div class="marginb-20">
+					<input class="input" type="number" name="likes" placeholder="Likes" value="<%= article.likes %>">
 				</div>
-				<div class="div-input">
-					<input class="create-input" type="submit" value="Update">
-				</div>
+				<center class="marginb-20">
+					<input class="button is-success is-outlined" type="submit" value="Update">
+				</center>
 			</form>
 		</div>
+		<center>
+			<a href="/articles" class="button is-danger is-outlined">Back</a>
+		</center>
+	</div>
+		
 </form>
 </body>
 </html>

@@ -66,7 +66,7 @@ router.get("/mylists", auth.checkUserLogin, (req, res) =>{
 });
 
 // Shows article with all comments
-router.get('/:id', (req, res)=>{
+router.get('/:id/singlearticle', (req, res)=>{
     Article.findById(req.params.id).populate('authorId', "name email").exec( (err, article)=>{
         Comment.find({articleId: req.params.id}).populate('author', "name").exec( (err, comments)=>{
             res.render("singlearticle", {article:article, comments:comments})

@@ -8,7 +8,7 @@
   <body>
       <% if(user) { %>
         <div class="headeruser">
-          <h1 class="header-articleworld authorname">ArticlesWorld</h1>
+          <h1 class="authorname title is-3 is-spaced">ArticlesWorld</h1>
           <div class="header-right">
               <a class="header-articleworld authorname" href="">Login User: <span><%= user.name %></span></a>
               <a class="authorname" href="/users/logout">Logout</a>
@@ -21,8 +21,8 @@
             <h1 class="header-articleworld authorname">ArticlesWorld</h1>
           </div>
           <div>
-            <a class="headerlogreg-a" href="/users/login">Login</a>
-            <a class="headerlogreg-a" href="/users/register"> / Register</a>
+            <a class="headerlogreg-a button is-primary" href="/users/login">Login</a>
+            <a class="headerlogreg-a button is-primary" href="/users/register">Register</a>
           </div>
         </div>
       <% } %>
